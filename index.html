@@ -37,8 +37,8 @@
           sharing knowledge.
         </p>
 
-        <ul>
-          <li>
+        <ul id="socialLinks">
+          <li class="youtube">
             <a
               href="https://www.youtube.com/liliancrivelliwebdeveloper"
               target="_blank"
@@ -46,12 +46,12 @@
               <img src="img/youtube.svg" alt="Ícone do youtube" />
             </a>
           </li>
-          <li>
+          <li class="instagram">
             <a href="https://www.instagram.com/liliancrivelli/" target="_blank">
               <img src="img/instagran.svg" alt="Ícone do instagram" />
             </a>
           </li>
-          <li>
+          <li class="facebook">
             <a
               href="https://www.facebook.com/lilian.crivelli.5"
               target="_blank"
@@ -59,7 +59,7 @@
               <img src="img/facebook.svg" alt="Ícone do facebook" />
             </a>
           </li>
-          <li>
+          <li class="twitter">
             <a href="https://twitter.com/CrivelliAraujo" target="_blank">
               <img src="img/twitter.svg" alt="Ícone do twitter" />
             </a>
@@ -71,24 +71,31 @@
     <script>
       //Os nomes de funções e variaveis não podem ter espaço
       //DOM: documento object model
+      
       //Padroes para criação de variáveis:
       //  *camelCase: a primeira palavra começa com letra minuscula e as seguintes são com letra maiusculas. Ex: linksRedesSociais;
       // *PascalCase: todas as palavras começam com letra maiuscula. Ex: LinksRedesSociais;
       // *snake_case: todas as palavras começam com letra minusculas, porém são separadas _ . Ex: links_redes_social;
 
-
       //Boas praticas: *Ser descritivo nos nomes das variaveis, classes e id. *Nomear classes, id e variaveis usando o "inglês", sempre;
 
+      
 
-
-const linksSocialMedia= {
+const LinksSocialMedia = {
   github: 'liliandev27',
   youtube: 'liliancrivelliwebdeveloper',
   facebook: 'lilian.crivelli.5',
   instagram: 'liliancrivelli',
-  twitter: 'CrivelliAraujo'
+  twitter: 'CrivelliAraujo' 
 }
 
+function changeSocialMediaLinks() {
+  for (let li of socialLinks.children) {
+  const social = li.getAttribute('class') 
+  
+  li.children[0].href = `https://${social}.com/${LinksSocialMedia[social]}`
+  }
+}
     </script>
   </body>
 </html>
